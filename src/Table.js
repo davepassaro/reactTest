@@ -56,7 +56,6 @@ export default function Table() {
       </tr>
 
       {APIData && APIData.filter(item =>{
-        //console.log(currentStartIndex,currentEndIndex,'cse', (currentStartIndex<= item.id),( currentEndIndex >= item.id), item.id)
           return (currentStartIndex<= item.id && currentEndIndex >= item.id)})
         .map(item => (
         <tr key={item.id}>
