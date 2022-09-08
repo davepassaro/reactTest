@@ -1,3 +1,38 @@
+Sheet1
+Page 1
+Music Reports Web Development Test
+Step 1:
+Step 2:
+Create 2 pages using hooks to navigate between them
+Step 3:
+Add a form with at least one input and a table to each page
+Step 4:
+Step 5:
+Step 6:
+Using context maintain the filters on each page when navigating back and forth
+Step 7:
+Create a react project using either create react app or webpack
+Add data to the tables using an ajax call. If you have an existing dataset you can use it. If not, you
+can use https://jsonplaceholder.typicode.com/todos
+Create a filter/search for each table using useEffect/useState to trigger from the input on the same
+page
+Post your code on your github. If you can post the site online great, but it is not necessary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

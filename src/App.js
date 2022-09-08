@@ -17,12 +17,9 @@ function useContextState() {
 
 function App() {
 
-  //const filterContextArray = React.createContext([]);
-  //const [isOpen, setIsOpen] = React.useState(false);
-  //const [tableData, setTableData] = React.useState(false);
-  const [inputValue, setValue] = useState("");
+  const [toggleTable, setToggleTable] = React.useState(false);
   const [tableOneIndex,setTableOneIndex] = useState({start: 1, end: 1});
-  const [tableTwoIndex,setTableTwoIndex] = useState({start: 1, end: 1});
+  const [tableTwoIndex,setTableTwoIndex] = useState({start: 2, end: 2});
   const [APIData, setAPIData] = useState();
 
   
@@ -33,7 +30,7 @@ function App() {
             'https://jsonplaceholder.typicode.com/todos'
         );
         const json = await response.json();
-        setAPIData(json)//json.data.map(it => it.data));
+        setAPIData(json);
       } catch (e) {
         console.error(e);
       }
@@ -41,22 +38,6 @@ function App() {
   }, []);
 
 
-
-
-  // React.useEffect(()=>{
-  //   async function fetchMyAPI() {
-  //     let response = await fetch('https://jsonplaceholder.typicode.com/todos');
-  //     response = await response.json();
-  //     console.log(response)
-  //     setTableData(response);
-  //   }
-  //   fetchMyAPI();
-  //   console.log( tableData, 'td')
-  // },[]);
-
-  // function toggleAppOpen() {
-  //   setIsOpen(prevIsOpen => !prevIsOpen);
-  // }
 
   return (
     <div className="App">
@@ -66,20 +47,17 @@ function App() {
         </p>
       </header>
       <div>
-      { 
-      /* {toggleTable ?
-          <appContext.Provider value={[filterContextArray]}>
-          {children}
-        </appContext.Provider> :
-        <div className='startAppButtonParent'><button id="openButton" onClick={toggleAppOpen}>Switch Tables</button></div> */
-        }
+      <button onClick={()=>
+        setToggleTable(prevToggleTable=>{
+          return !prevToggleTable})}>Switch Tables</button>
       </div>
 
       <FilterContext.Provider value={
         [
           tableOneIndex, setTableOneIndex, 
           tableTwoIndex, setTableTwoIndex, 
-          APIData, setAPIData
+          APIData, setAPIData, 
+          toggleTable
         ]
         }>
         <Table />
