@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React, {useState, useEffect, useContext} from 'react';
 import Table from "./Table";
@@ -24,6 +23,7 @@ function App() {
 
   
   useEffect(() => {
+    // Fetch on app start
     (async function() {
       try {
         const response = await fetch(

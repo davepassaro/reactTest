@@ -21,6 +21,10 @@ export default function Table() {
     <div>
     <form onSubmit={handleSubmit}>
     <span>Starting Index</span>
+
+    {// Sending index as props would clean up some of this duplicated code 
+    }
+
     <input type="number" value={currentStartIndex} onChange={
       e => {
         toggleTable ?
@@ -53,7 +57,7 @@ export default function Table() {
       </tr>
 
       {APIData && APIData.filter(item =>{
-        console.log(currentStartIndex,currentEndIndex,'cse', (currentStartIndex<= item.id),( currentEndIndex >= item.id), item.id)
+        //console.log(currentStartIndex,currentEndIndex,'cse', (currentStartIndex<= item.id),( currentEndIndex >= item.id), item.id)
           return (currentStartIndex<= item.id && currentEndIndex >= item.id)})
         .map(item => (
         <tr key={item.id}>
