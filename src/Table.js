@@ -22,8 +22,7 @@ export default function Table() {
     <form onSubmit={handleSubmit}>
     <span>Starting Index</span>
 
-    {// Sending index as props would clean up some of this duplicated code 
-    }
+    {/* Sending index as props would clean up some of this duplicated code*/ }
 
     <input type="number" value={currentStartIndex} onChange={
       e => {
