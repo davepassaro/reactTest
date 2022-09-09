@@ -21,7 +21,7 @@ function App() {
 
   const [toggleTable, setToggleTable] = React.useState(false);
   const [tableOneIndex,setTableOneIndex] = useState({start: 1, end: 1});
-  const [tableTwoIndex,setTableTwoIndex] = useState({start: 2, end: 2});
+  const [tableTwoIndex,setTableTwoIndex] = useState({start: 1, end: 2});
   const [APIData, setAPIData] = useState();
 
   useEffect(() => {
@@ -41,17 +41,8 @@ function App() {
 
   return (
     <div className="App">
+      <Router>
      <Navbar/>
-      <div>
-      <button onClick={()=>
-        setToggleTable(prevToggleTable=>{return !prevToggleTable})}>Switch Tables</button>
-      </div>
-      <BrowserRouter>
-      <Switch>
-        <Route path="/">
-          <Home/>
-      </Route>
-      <Route exact path="/table">
       <FilterContext.Provider value={
         [
           tableOneIndex, setTableOneIndex, 
@@ -60,11 +51,19 @@ function App() {
           toggleTable
         ]
         }>
+      <Switch>
+        <Route exact path="/">
+          <Home/>
+      </Route>
+      <Route exact path="/table/1">
         <Table />
-      </FilterContext.Provider>
+      </Route>
+      <Route exact path="/table/2">
+        <Table />
       </Route>
       </Switch>
-      </BrowserRouter>
+      </FilterContext.Provider>
+      </Router>
     </div>
   );
 }

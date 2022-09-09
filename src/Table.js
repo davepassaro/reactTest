@@ -1,6 +1,6 @@
 import React from "react";
+import {useLocation} from 'react-router-dom';
 import { useContextState } from "./App";
-
 export default function Table() {
 
     const [tableOneIndex, setTableOneIndex, tableTwoIndex, setTableTwoIndex, APIData, setAPIData, toggleTable] = useContextState();
@@ -13,27 +13,28 @@ export default function Table() {
       })
     };
 
-    const currentStartIndex = toggleTable ? tableTwoIndex.start : tableOneIndex.start;
-    const currentEndIndex = toggleTable ? tableTwoIndex.end : tableOneIndex.end;
+    const location = useLocation();
+    const inTableOne =  location.pathname === '/table/1';
+    const currentStartIndex = inTableOne ? tableTwoIndex.start : tableOneIndex.start;
+    const currentEndIndex = inTableOne? tableTwoIndex.end : tableOneIndex.end;
 
   return (
-    <div>
+    <div className="tableParent">
+    <h1 className="TablePageItems">Table {inTableOne ? " One" : " Two"}</h1>
     <form onSubmit={handleSubmit}>
-    <span>Starting Index</span>
-
-    {/* Sending index as props would clean up some of this duplicated code */ }
-
+    <span className="TablePageItems">Starting Index</span>
     <input type="number" value={currentStartIndex} onChange={
       e => {
-        toggleTable ?
+        inTableOne ?
           setTableTwoIndex(tableTwoIndex =>({...tableTwoIndex, start: e.target.value}))
         :
           setTableOneIndex(tableOneIndex =>({...tableOneIndex, start: e.target.value}))
       }} />
-    <span>Ending Index</span>
+      <br/>
+    <span className="TablePageItems">Ending Index</span>
     <input type="number" value={currentEndIndex} onChange={
       e => {
-        toggleTable ?  
+        inTableOne ?  
           setTableTwoIndex(tableTwoIndex =>({...tableTwoIndex, end: e.target.value}))
         :
           setTableOneIndex(tableOneIndex =>({...tableOneIndex, end: e.target.value}))
@@ -43,7 +44,7 @@ export default function Table() {
     <table className="table">
     <tbody>
       <tr>
-        <th className="table-header">ID</th>
+        <th className="table-th">ID</th>
         <th >Title</th>
       </tr>
 

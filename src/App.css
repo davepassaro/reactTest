@@ -2,25 +2,72 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body > #root > div {
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
+*{
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+.navbar {
+  padding: 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0 auto;
+  background-color: rgb(87, 93, 145);
+}
+
+.navbar h1 {
+  color: #8d8d8d;
+}
+
+.navbar .links {
+  margin-left: auto;
+}
+
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.navbar a:hover {
+  color: #f1356d;
 }
 
 .table{
   text-align: left;
+  font-family: Arial, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  background-color: rgb(225, 228, 231);
 }
 
-.table-header{
+.table-th{
   width: 15px;
+}
+
+.tableParent{
+  width: 100%;
+  height: 100%;
+}
+
+.homeImg{
+  width: 100%;
+  height: 100%;
+}
+
+.TablePageItems{
+  font-weight: 700;
+  display: inline-block;
+  padding:20px;
+}
+
+.formText{
+  display: inline-block;
+  padding:20px;
 }

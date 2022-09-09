@@ -1,9 +1,7 @@
 import homeImg from './images/home.jpg';
 export function Home() {
     return (
-        <div>
-            <img src={homeImg}></img>
-        </div>
+            <img className='homeImg' src={homeImg}></img>
     )
 }
 
