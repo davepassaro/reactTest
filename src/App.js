@@ -1,6 +1,9 @@
 import './App.css';
 import React, {useState, useEffect, useContext} from 'react';
 import Table from "./Table";
+import { BrowserRouter, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {Home} from './Home';
+import Navbar from "./Navbar";
 
 const FilterContext = React.createContext([]);
 
@@ -8,7 +11,7 @@ function useContextState() {
   const context = useContext(FilterContext);
   if (context === undefined) {
     throw new Error(
-      "useTicketDataState must be used within a TicketDataProvider"
+      "context must be used within a Provider"
     );
   }
   return context;
@@ -21,7 +24,6 @@ function App() {
   const [tableTwoIndex,setTableTwoIndex] = useState({start: 2, end: 2});
   const [APIData, setAPIData] = useState();
 
-  
   useEffect(() => {
     // Fetch on app start
     (async function() {
@@ -37,21 +39,19 @@ function App() {
     })();
   }, []);
 
-
-
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          React Test
-        </p>
-      </header>
+     <Navbar/>
       <div>
       <button onClick={()=>
-        setToggleTable(prevToggleTable=>{
-          return !prevToggleTable})}>Switch Tables</button>
+        setToggleTable(prevToggleTable=>{return !prevToggleTable})}>Switch Tables</button>
       </div>
-
+      <BrowserRouter>
+      <Switch>
+        <Route path="/">
+          <Home/>
+      </Route>
+      <Route exact path="/table">
       <FilterContext.Provider value={
         [
           tableOneIndex, setTableOneIndex, 
@@ -62,6 +62,9 @@ function App() {
         }>
         <Table />
       </FilterContext.Provider>
+      </Route>
+      </Switch>
+      </BrowserRouter>
     </div>
   );
 }
