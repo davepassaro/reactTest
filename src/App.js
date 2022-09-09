@@ -1,12 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect, useContext } from "react";
 import Table from "./Table";
-import {
-  BrowserRouter,
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./Home";
 import Navbar from "./Navbar";
 
@@ -22,7 +17,7 @@ function useContextState() {
 
 function App() {
   const [toggleTable, setToggleTable] = React.useState(false);
-  const [tableOneIndex, setTableOneIndex] = useState({ start: 1, end: 1 });
+  const [tableOneIndex, setTableOneIndex] = useState({ start: 1, end: 2 });
   const [tableTwoIndex, setTableTwoIndex] = useState({ start: 1, end: 2 });
   const [APIData, setAPIData] = useState();
 

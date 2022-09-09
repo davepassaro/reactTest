@@ -12,20 +12,24 @@ export default function Table() {
     toggleTable,
   ] = useContextState();
 
+  const location = useLocation();
+  const inTableOne = location.pathname === "/table/1";
+  const currentStartIndex = inTableOne ? tableTwoIndex.start : tableOneIndex.start;
+  const currentEndIndex = inTableOne ? tableTwoIndex.end : tableOneIndex.end;
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    inTableOne ? 
     setTableOneIndex({
       start: e.target[0].value,
       end: e.target[1].value,
-    });
+    }) 
+    :
+    setTableTwoIndex({
+      start: e.target[0].value,
+      end: e.target[1].value,
+    })
   };
-
-  const location = useLocation();
-  const inTableOne = location.pathname === "/table/1";
-  const currentStartIndex = inTableOne
-    ? tableTwoIndex.start
-    : tableOneIndex.start;
-  const currentEndIndex = inTableOne ? tableTwoIndex.end : tableOneIndex.end;
 
   return (
     <div className="tableParent">
