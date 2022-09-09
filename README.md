@@ -1,14 +1,20 @@
 Music Reports Web Development Test
+
 Create 2 pages using hooks to navigate between them
+
 Add a form with at least one input and a table to each page
+
 Using context maintain the filters on each page when navigating back and forth
+
 Create a react project using either create react app or webpack
+
 Add data to the tables using an ajax call. If you have an existing dataset you can use it. If not, you
 can use https://jsonplaceholder.typicode.com/todos
+
 Create a filter/search for each table using useEffect/useState to trigger from the input on the same
 page
 
-
+url: https://music-reports-test.herokuapp.com/
 
 
 

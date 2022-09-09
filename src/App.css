@@ -6,7 +6,7 @@ body > #root > div {
   height: 100vh;
 }
 
-*{
+* {
   margin: 0;
   font-family: "Quicksand";
   color: #333;
@@ -38,7 +38,7 @@ body > #root > div {
   color: #f1356d;
 }
 
-.table{
+.table {
   text-align: left;
   font-family: Arial, sans-serif;
   margin-left: auto;
@@ -47,27 +47,27 @@ body > #root > div {
   background-color: rgb(225, 228, 231);
 }
 
-.table-th{
+.table-th {
   width: 15px;
 }
 
-.tableParent{
+.tableParent {
   width: 100%;
   height: 100%;
 }
 
-.homeImg{
+.homeImg {
   width: 100%;
   height: 100%;
 }
 
-.TablePageItems{
+.TablePageItems {
   font-weight: 700;
   display: inline-block;
-  padding:20px;
+  padding: 20px;
 }
 
-.formText{
+.formText {
   display: inline-block;
-  padding:20px;
+  padding: 20px;
 }
