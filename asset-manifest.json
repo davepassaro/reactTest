@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/davepassaro.github.io/reactTest/static/css/main.fd83c0e4.css",
-    "main.js": "/davepassaro.github.io/reactTest/static/js/main.b85c5d42.js",
-    "static/js/787.b2d3c2bd.chunk.js": "/davepassaro.github.io/reactTest/static/js/787.b2d3c2bd.chunk.js",
-    "static/media/home.jpg": "/davepassaro.github.io/reactTest/static/media/home.9a64e5321b7a9d1c62a8.jpg",
-    "index.html": "/davepassaro.github.io/reactTest/index.html",
-    "main.fd83c0e4.css.map": "/davepassaro.github.io/reactTest/static/css/main.fd83c0e4.css.map",
-    "main.b85c5d42.js.map": "/davepassaro.github.io/reactTest/static/js/main.b85c5d42.js.map",
-    "787.b2d3c2bd.chunk.js.map": "/davepassaro.github.io/reactTest/static/js/787.b2d3c2bd.chunk.js.map"
+    "main.css": "/reactTest/static/css/main.fd83c0e4.css",
+    "main.js": "/reactTest/static/js/main.9a40fc52.js",
+    "static/js/787.b2d3c2bd.chunk.js": "/reactTest/static/js/787.b2d3c2bd.chunk.js",
+    "static/media/home.jpg": "/reactTest/static/media/home.9a64e5321b7a9d1c62a8.jpg",
+    "index.html": "/reactTest/index.html",
+    "main.fd83c0e4.css.map": "/reactTest/static/css/main.fd83c0e4.css.map",
+    "main.9a40fc52.js.map": "/reactTest/static/js/main.9a40fc52.js.map",
+    "787.b2d3c2bd.chunk.js.map": "/reactTest/static/js/787.b2d3c2bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fd83c0e4.css",
-    "static/js/main.b85c5d42.js"
+    "static/js/main.9a40fc52.js"
   ]
 }
