@@ -4,7 +4,7 @@ import Table from "./Table";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./Home";
 import Navbar from "./Navbar";
-
+import Quiz from "./Quiz";
 const FilterContext = React.createContext([]);
 
 function useContextState() {
@@ -60,6 +60,9 @@ function App() {
             </Route>
             <Route exact path="/table/2">
               <Table />
+            </Route>
+            <Route exact path="/musicQuiz">
+              <Quiz />
             </Route>
           </Switch>
         </FilterContext.Provider>
