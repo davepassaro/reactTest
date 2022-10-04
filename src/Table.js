@@ -14,21 +14,22 @@ export default function Table() {
 
   const location = useLocation();
   const inTableOne = location.pathname === "/table/1";
-  const currentStartIndex = inTableOne ? tableTwoIndex.start : tableOneIndex.start;
-  const currentEndIndex = inTableOne ? tableTwoIndex.end : tableOneIndex.end;
+  const currentStartIndex = inTableOne
+    ? tableOneIndex.start
+    : tableTwoIndex.start;
+  const currentEndIndex = inTableOne ? tableOneIndex.end : tableTwoIndex.end;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    inTableOne ? 
-    setTableOneIndex({
-      start: e.target[0].value,
-      end: e.target[1].value,
-    }) 
-    :
-    setTableTwoIndex({
-      start: e.target[0].value,
-      end: e.target[1].value,
-    })
+    inTableOne
+      ? setTableOneIndex({
+          start: e.target[0].value,
+          end: e.target[1].value,
+        })
+      : setTableTwoIndex({
+          start: e.target[0].value,
+          end: e.target[1].value,
+        });
   };
 
   return (
@@ -41,12 +42,12 @@ export default function Table() {
           value={currentStartIndex}
           onChange={(e) => {
             inTableOne
-              ? setTableTwoIndex((tableTwoIndex) => ({
-                  ...tableTwoIndex,
+              ? setTableOneIndex((tableOneIndex) => ({
+                  ...tableOneIndex,
                   start: e.target.value,
                 }))
-              : setTableOneIndex((tableOneIndex) => ({
-                  ...tableOneIndex,
+              : setTableTwoIndex((tableTwoIndex) => ({
+                  ...tableTwoIndex,
                   start: e.target.value,
                 }));
           }}
@@ -58,12 +59,12 @@ export default function Table() {
           value={currentEndIndex}
           onChange={(e) => {
             inTableOne
-              ? setTableTwoIndex((tableTwoIndex) => ({
-                  ...tableTwoIndex,
+              ? setTableOneIndex((tableOneIndex) => ({
+                  ...tableOneIndex,
                   end: e.target.value,
                 }))
-              : setTableOneIndex((tableOneIndex) => ({
-                  ...tableOneIndex,
+              : setTableTwoIndex((tableTwoIndex) => ({
+                  ...tableTwoIndex,
                   end: e.target.value,
                 }));
           }}
